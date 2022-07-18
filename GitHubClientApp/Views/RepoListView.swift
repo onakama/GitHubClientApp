@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct RepoListView: View {
-    @State private var mockRepos: [Repo] = []
+    @StateObject var reposStore = ReposStore()
     
     var body: some View {
         NavigationView {
-            if mockRepos.isEmpty {
+            if reposStore.repos.isEmpty {
                 ProgressView("loading...")
             } else {
-                List(mockRepos) { repo in
+                List(reposStore.repos) { repo in
                     NavigationLink(destination: RepoDetailView(repo: repo)) {
                         RepoRow(repo: repo)
                     }
@@ -23,19 +23,21 @@ struct RepoListView: View {
                 .navigationTitle("Repositories")
             }
         }
-        .onAppear() {
-            loadRepos()
+        .task {
+            await reposStore.loadRepos()
         }
     }
-    
-    private func loadRepos() {
-            // 1秒後にモックデータを読み込む
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                mockRepos = [
-                    .mock1, .mock2, .mock3, .mock4, .mock5
-                ]
-            }
-        }
+}
+
+@MainActor
+class ReposStore: ObservableObject {
+    @Published private(set) var repos = [Repo]()
+
+    func loadRepos() async {
+        try! await Task.sleep(nanoseconds: 1_000_000_000)
+
+        repos = [.mock1, .mock2, .mock3, .mock4, .mock5]
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
