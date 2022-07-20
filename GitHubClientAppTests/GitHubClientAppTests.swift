@@ -78,5 +78,4 @@ class RepoListViewModelTests: XCTestCase {
             return repos
         }
     }
-    struct DummyError: Error {}
 }

@@ -24,6 +24,12 @@
 		5C9702D62886F0FD001F86CF /* RepoDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702D52886F0FD001F86CF /* RepoDataRepository.swift */; };
 		5C9702D92886F221001F86CF /* RepoErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702D82886F221001F86CF /* RepoErrors.swift */; };
 		5C9702DB2886F254001F86CF /* Stateful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702DA2886F254001F86CF /* Stateful.swift */; };
+		5C9702DE28884E1A001F86CF /* MockRepoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702DD28884E1A001F86CF /* MockRepoRepository.swift */; };
+		5C9702DF28884E1A001F86CF /* MockRepoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702DD28884E1A001F86CF /* MockRepoRepository.swift */; };
+		5C9702E028884E1A001F86CF /* MockRepoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702DD28884E1A001F86CF /* MockRepoRepository.swift */; };
+		5C9702E628884F31001F86CF /* DummyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702E528884F31001F86CF /* DummyError.swift */; };
+		5C9702E728884F31001F86CF /* DummyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702E528884F31001F86CF /* DummyError.swift */; };
+		5C9702E828884F31001F86CF /* DummyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702E528884F31001F86CF /* DummyError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,8 @@
 		5C9702D52886F0FD001F86CF /* RepoDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDataRepository.swift; sourceTree = "<group>"; };
 		5C9702D82886F221001F86CF /* RepoErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoErrors.swift; sourceTree = "<group>"; };
 		5C9702DA2886F254001F86CF /* Stateful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stateful.swift; sourceTree = "<group>"; };
+		5C9702DD28884E1A001F86CF /* MockRepoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepoRepository.swift; sourceTree = "<group>"; };
+		5C9702E528884F31001F86CF /* DummyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				5C48976C28846B880006F4E8 /* Preview Assets.xcassets */,
-				5C48979F2885187F0006F4E8 /* User+mock.swift */,
-				5C48979D288518460006F4E8 /* Repo+mock.swift */,
+				5C9702DC288848A9001F86CF /* Mocks */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -187,6 +194,17 @@
 				5C9702D82886F221001F86CF /* RepoErrors.swift */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		5C9702DC288848A9001F86CF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5C48979F2885187F0006F4E8 /* User+mock.swift */,
+				5C48979D288518460006F4E8 /* Repo+mock.swift */,
+				5C9702DD28884E1A001F86CF /* MockRepoRepository.swift */,
+				5C9702E528884F31001F86CF /* DummyError.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +339,7 @@
 			files = (
 				5C48979928850C8D0006F4E8 /* RepoRow.swift in Sources */,
 				5C9702DB2886F254001F86CF /* Stateful.swift in Sources */,
+				5C9702DE28884E1A001F86CF /* MockRepoRepository.swift in Sources */,
 				5C9702D62886F0FD001F86CF /* RepoDataRepository.swift in Sources */,
 				5C48979E288518460006F4E8 /* Repo+mock.swift in Sources */,
 				5C9702D92886F221001F86CF /* RepoErrors.swift in Sources */,
@@ -331,6 +350,7 @@
 				5C4897A02885187F0006F4E8 /* User+mock.swift in Sources */,
 				5C48976628846B870006F4E8 /* GitHubClientAppApp.swift in Sources */,
 				5C9702D42886EF8B001F86CF /* RepoListViewModel.swift in Sources */,
+				5C9702E628884F31001F86CF /* DummyError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +359,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C48977728846B880006F4E8 /* GitHubClientAppTests.swift in Sources */,
+				5C9702E728884F31001F86CF /* DummyError.swift in Sources */,
+				5C9702DF28884E1A001F86CF /* MockRepoRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +368,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C9702E028884E1A001F86CF /* MockRepoRepository.swift in Sources */,
+				5C9702E828884F31001F86CF /* DummyError.swift in Sources */,
 				5C48978328846B880006F4E8 /* GitHubClientAppUITestsLaunchTests.swift in Sources */,
 				5C48978128846B880006F4E8 /* GitHubClientAppUITests.swift in Sources */,
 			);
