@@ -8,14 +8,31 @@
 import XCTest
 @testable import GitHubClientApp
 
-class GitHubClientAppTests: XCTestCase {
+class RepoListViewModelTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func test_onAppear_正常系() async {
+        let viewModel = await RepoListViewModel(repoRepository: MockRepoRepository_正常系(repos: [.mock1, .mock2]))
+        
+        await viewModel.onAppear()
+        
+        switch await viewModel.state {
+        case let .loaded(repos):
+            XCTAssertEqual(repos, [Repo.mock1, Repo.mock2])
+        default:
+            XCTFail()
+        }
     }
+    @MainActor func test_onAppear_異常系() async {
+        let viewModel = RepoListViewModel(repoRepository: MockRepoRepository_異常系(repos: [],error: DummyError()))
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        await viewModel.onAppear()
+
+        switch viewModel.state {
+        case let .failed(error):
+            XCTAssert(error is DummyError)
+        default:
+            XCTFail()
+        }
     }
 
     func testExample() throws {
@@ -33,4 +50,33 @@ class GitHubClientAppTests: XCTestCase {
         }
     }
 
+    //モック
+    struct MockRepoRepository_正常系: RepoRepository {
+        let repos: [Repo]
+        
+        init(repos: [Repo]) {
+            self.repos = repos
+        }
+        
+        func fetchRepos() async throws -> [Repo] {
+            repos
+        }
+    }
+    struct MockRepoRepository_異常系: RepoRepository {
+        let repos: [Repo]
+        let error: Error?
+        
+        init(repos: [Repo], error: Error) {
+            self.repos = repos
+            self.error = error
+        }
+        
+        func fetchRepos() async throws -> [Repo] {
+            if let error = error {
+                throw error
+            }
+            return repos
+        }
+    }
+    struct DummyError: Error {}
 }
