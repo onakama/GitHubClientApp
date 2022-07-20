@@ -21,7 +21,7 @@
 		5C48979E288518460006F4E8 /* Repo+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48979D288518460006F4E8 /* Repo+mock.swift */; };
 		5C4897A02885187F0006F4E8 /* User+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C48979F2885187F0006F4E8 /* User+mock.swift */; };
 		5C9702D42886EF8B001F86CF /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702D32886EF8B001F86CF /* RepoListViewModel.swift */; };
-		5C9702D62886F0FD001F86CF /* RepoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702D52886F0FD001F86CF /* RepoRepository.swift */; };
+		5C9702D62886F0FD001F86CF /* RepoDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702D52886F0FD001F86CF /* RepoDataRepository.swift */; };
 		5C9702D92886F221001F86CF /* RepoErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702D82886F221001F86CF /* RepoErrors.swift */; };
 		5C9702DB2886F254001F86CF /* Stateful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9702DA2886F254001F86CF /* Stateful.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,7 @@
 		5C48979D288518460006F4E8 /* Repo+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repo+mock.swift"; sourceTree = "<group>"; };
 		5C48979F2885187F0006F4E8 /* User+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+mock.swift"; sourceTree = "<group>"; };
 		5C9702D32886EF8B001F86CF /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
-		5C9702D52886F0FD001F86CF /* RepoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoRepository.swift; sourceTree = "<group>"; };
+		5C9702D52886F0FD001F86CF /* RepoDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDataRepository.swift; sourceTree = "<group>"; };
 		5C9702D82886F221001F86CF /* RepoErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoErrors.swift; sourceTree = "<group>"; };
 		5C9702DA2886F254001F86CF /* Stateful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stateful.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,7 +154,7 @@
 		5C489795288507CD0006F4E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5C9702D52886F0FD001F86CF /* RepoRepository.swift */,
+				5C9702D52886F0FD001F86CF /* RepoDataRepository.swift */,
 				5C48978F288507930006F4E8 /* Repo.swift */,
 				5C489791288507A00006F4E8 /* User.swift */,
 				5C9702D72886F205001F86CF /* Others */,
@@ -321,7 +321,7 @@
 			files = (
 				5C48979928850C8D0006F4E8 /* RepoRow.swift in Sources */,
 				5C9702DB2886F254001F86CF /* Stateful.swift in Sources */,
-				5C9702D62886F0FD001F86CF /* RepoRepository.swift in Sources */,
+				5C9702D62886F0FD001F86CF /* RepoDataRepository.swift in Sources */,
 				5C48979E288518460006F4E8 /* Repo+mock.swift in Sources */,
 				5C9702D92886F221001F86CF /* RepoErrors.swift in Sources */,
 				5C489792288507A00006F4E8 /* User.swift in Sources */,
