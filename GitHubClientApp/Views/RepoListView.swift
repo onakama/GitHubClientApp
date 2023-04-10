@@ -21,7 +21,7 @@ struct RepoListView: View {
                 case .idle, .loading:
                     ProgressView("loading...")
                 case .loaded([]):
-                    Text("No Repositories")
+                    Text("No Repositoriesss")
                         .bold()
                 case let .loaded(repos):
                     List(repos) { repo in
