@@ -19,7 +19,7 @@ struct RepoListView: View {
             Group {
                 switch viewModel.state {
                 case .idle, .loading:
-                    ProgressView("loading...")
+                    ProgressView("loafffding...")
                 case .loaded([]):
                     Text("No Repositories")
                         .bold()
